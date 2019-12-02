@@ -1,0 +1,376 @@
+Temp Code hold
+
+
+switch (direction) {
+			
+					// Running Right
+				case 1: if (rTank.intersects(rMonster)) {boom(rTank, rMonster);};
+					if (monsterX > 800 + (this.spriteH)) {break;}
+					for (int i =0; i < 10; i++) {
+						if (monsterX > 800) {break;}
+						if (rTank.intersects(rMonster)) {boom(rTank, rMonster);};
+						monsterX = monsterX +20;
+						MonsterLabel.setLocation(monsterX, this.spriteY);
+						try {
+							Thread.sleep(250); // Without this the screen cannot refresh 
+							
+						} catch (Exception e) {
+							
+						}System.out.println("Moving Right ");
+					}break;
+				
+				 	// Running Left
+				case 2: if (rTank.intersects(rMonster)) {boom(rTank, rMonster);};
+					if (monsterX < (150 + this.spriteH)) {break;}
+					for (int i =0; i < 10; i++) {
+						if (monsterX < 150) {break;}
+						if (rTank.intersects(rMonster)) {boom(rTank, rMonster);};
+						monsterX = monsterX -20;
+						MonsterLabel.setLocation(monsterX, this.spriteY);
+						try {
+							Thread.sleep(250); // Without this the screen cannot refresh 
+							
+						} catch (Exception e) {
+							
+						}
+						System.out.println("Moving Left ");
+					}break;
+				
+					// Running Up
+				case 3: if (rTank.intersects(rMonster)) {boom(rTank, rMonster);};
+					if (monsterY < (125 + this.spriteW)) {break;}
+				
+						for (int i =0; i < 10; i++) {
+							if (monsterY < 125) {break;}
+							if (rTank.intersects(rMonster)) {boom(rTank, rMonster);};
+							monsterY = monsterY -20;
+							MonsterLabel.setLocation(this.spriteX, monsterY);
+							try {
+								Thread.sleep(250); // Without this the screen cannot refresh 
+							} catch (Exception e) {		
+							
+							}
+							
+							System.out.println("Moving Up ");
+						}
+					
+					break;
+						
+					// Running Down
+				default: if (rTank.intersects(rMonster)) {boom(rTank, rMonster);};
+					if (monsterY > (775 + this.spriteW)) {break;}
+					for (int i =0; i < 10; i++) {
+						if (rTank.intersects(rMonster)) {boom(rTank, rMonster);};
+						if (monsterY > 775) {break;}
+						monsterY = monsterY +20;
+						MonsterLabel.setLocation(this.spriteX, monsterY);
+						try {
+							Thread.sleep(250); // Without this the screen cannot refresh 
+							
+						} catch (Exception e) {
+							
+						}System.out.println("Moving Down ");
+					}break;
+					
+					
+					
+					// Changing the color of characters when collision 
+					
+					
+					 
+					 
+			}
+			
+			
+			-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+			
+			
+			
+			/*
+		int direction = getRandomNumber();
+		
+		System.out.println("Direction number is " + direction);
+		
+		int currentLocationX = this.spriteX;
+		int currentLocationY = this.spriteY;
+		
+		
+		switch (direction) {
+		
+				// Running Right
+			case 1: for (int i =0; i < 10; i++) {
+				currentLocationX = currentLocationX +10;
+				}break;
+			
+			 	// Running Left
+			case 2: for (int i =0; i < 10; i++) {
+				currentLocationX = currentLocationX -10;
+				}break;
+			
+				// Running Up
+			case 3: for (int i =0; i < 10; i++) {
+				currentLocationY = currentLocationY -10;
+				}break;
+					
+				// Running Down
+			default: for (int i =0; i < 10; i++) {
+				currentLocationY = currentLocationY +10;
+				}break;
+				 
+		}
+		*/
+			
+			
+			
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+			
+			
+			
+			
+			
+			
+				int length = getRandomNumber();
+		
+		//System.out.println("Length number is " + length);
+		
+		switch (startLocation) {
+		
+		case 1: break;
+		case 2: break;
+		case 3: break;
+				
+
+		default: break;
+			 
+		}
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		if (rTank.intersects(rMonster)) {boom(rTank, rMonster);};
+				
+				
+				System.out.println("Boom");
+				this.moving = false;
+				
+				this.setSpriteName("hurtmonster.png");
+				
+				String name = myTank.getSpriteName();
+				
+				switch (name) {
+				
+					case "tank.png": myTank.setSpriteName("hurttank.png"); TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+					case "tanknorth.png": myTank.setSpriteName("hurttanknorth.png"); TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+					case "tankeast.png": myTank.setSpriteName("hurttankeast.png");TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+					case "tankwest.png": myTank.setSpriteName("hurttankwest.png");TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+					case "tanksouth.png": myTank.setSpriteName("hurttanksouth.png");TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+					
+					default: myTank.setSpriteName("hurttank.png");TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+				}
+				
+				
+				AnimationButton.setText("Next Level");
+			}
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		//if (monsterY > 775) {monsterY = 775; this.moving = false;}
+				
+				//if (monsterY < 125) {monsterY = 125; this.moving = false;}
+				
+				//if (monsterX < 150) {monsterX = -1 * this.spriteW + 150; this.moving = false;}
+				
+				//if (monsterX > 800) {monsterX = 800; this.moving = false;}
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		/*tX += GameProperties.CHARACTER_STEP *2; // This will move twice as fast
+				if(tX > GameProperties.SCREEN_WIDTH) {
+					tX = -1 * this.spriteW;
+				} */
+				
+				//if (monsterY > 775) {monsterY = 775; }
+				
+				//if (monsterY < 125) {monsterY = 125; }
+				
+				//if (tX < 150) {	tX += GameProperties.CHARACTER_STEP *2;}
+						
+				//if (tX > 800) {tX -= GameProperties.CHARACTER_STEP *2;}
+				//this.spriteX = tX;
+				//this.spriteY = tY;
+				
+				//this.setSpriteX(tX);
+				//this.setSpriteY(tY);
+				
+				//MonsterLabel.setLocation(this.spriteX, this.spriteY);
+				
+				//detect collision 
+				
+			
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		/*
+		TankLabel.setIcon(new ImageIcon(
+				getClass().getResource(myTank.getSpriteName())
+				));
+		MonsterLabel.setIcon(new ImageIcon(
+				getClass().getResource(myMonster.getSpriteName())
+				));
+		*/
+		
+		
+//		while (pewMoving) {
+//			//moving code
+//			
+//			
+//			ptX += GameProperties.CHARACTER_STEP *4; // This will move twice as fast
+//			if(ptX > GameProperties.SCREEN_WIDTH) {
+//				ptX = -1 * this.spriteW;
+//			} 
+//			//this.spriteX = tX;
+//			//this.spriteY = tY;
+//			
+//			this.setSpriteX(ptX);
+//			this.setSpriteY(ptY);
+//			
+//			//Need to get the tanks location then offset it by half under a case statement of 
+//			// what the name is north / east/ west and south for the up/down/left/right
+//			// 
+//			
+//			PewPewLabel.setLocation(this.spriteX, this.spriteY);
+//			
+//			//detect collision 
+//			Rectangle rTank = myTank.getRectangle();
+//			Rectangle rMonster = myTank.getRectangle();
+//			Rectangle rPewPew = this.r;
+//			
+//			if (rPewPew.intersects(rMonster)) {
+//				System.out.println("Boom");
+//				this.pewMoving = false;
+//				myMonster.setMoving(false);
+//				
+//				this.setSpriteName(null);
+//				myMonster.setSpriteName("hurtmonster.png");
+//				
+//				MonsterLabel.setIcon(new ImageIcon(
+//						getClass().getResource(myMonster.getSpriteName())
+//						));
+//				PewPewLabel.setIcon(new ImageIcon(
+//						getClass().getResource(this.getSpriteName())
+//						));
+//				AnimationButton.setText("Run");
+//			}
+//			
+//			//pause
+//			try {
+//				Thread.sleep(200); // Without this the screen cannot refresh 
+//				
+//			} catch (Exception e) {
+//				
+//			}
+//			
+//		}
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+				
+			//String name = myTank.getSpriteName();
+			
+//			switch (name) {
+//			
+//				//case "tank.png": myTank.setSpriteName("hurttank.png"); TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+//				case "tanknorth.png": myTank.setSpriteName("hurttanknorth.png"); TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+//				case "tankeast.png": myTank.setSpriteName("hurttankeast.png");TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+//				case "tankwest.png": myTank.setSpriteName("hurttankwest.png");TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+//				case "tanksouth.png": myTank.setSpriteName("hurttanksouth.png");TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+//				
+//				default: myTank.setSpriteName("hurttank.png");TankLabel.setIcon(new ImageIcon(getClass().getResource(myTank.getSpriteName()))); break;
+//			}
+			
+			//String temp = theart1.getIcon().toString();
+			//System.out.println(temp);
+			
+			//temp.toString();
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
+		
+		-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+		
