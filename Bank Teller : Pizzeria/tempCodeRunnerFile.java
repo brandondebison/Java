@@ -1,0 +1,2 @@
+
+                dlm_selectedSize.removeAllElements();
